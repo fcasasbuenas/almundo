@@ -1,3 +1,3 @@
-var config = require('./data');
+var data = require('./data');
 
-module.exports = config;  
+module.exports = data;  
