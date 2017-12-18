@@ -1,8 +1,10 @@
 Almundo Examen Frontend
+
 El exámen está compuesto por dos aplicaciones, un backend escrito en NodeJS el cual expondrá
 una API REST para la interacción con la aplicación frontend.
 Adjunto a este documento encontrarás recursos que facilitarán el exámen, para que te enfoques
 en lo realmente importante.
+
 Recursos
 +-- data
 | +-- data.json
@@ -14,23 +16,29 @@ data/data.json (Mocks con lo necesario para modelar los datos de los hoteles).
 assets/icons/ (Iconos para mostrar los amenities de los hoteles y los filtros).
 assets/images/ (Imágenes de los hoteles y logo de almundo para utilizar en el header).
 designs/ (Diseños mobile y desktop)
+
 Ejercicio 1: API Rest NodeJS
-Este punto consiste en armar un API REST en Node.js. El mismo será utilizado en el ejercicio 2.
-La funcionalidad de listado y filtrado de hoteles debe estar soportada por la API y
-consumida en la aplicación cliente.
-A la hora de diseñar la estructura de la aplicación, tener en cuenta factores como
-escalabilidad, reutilización y separación de responsabilidades.
-Uso de configuraciones para ajustar como se ejecuta la aplicación en entornos productivos
-y de desarrollo.
+
+- Este punto consiste en armar un API REST en Node.js. El mismo será utilizado en el ejercicio 2.
+- La funcionalidad de listado y filtrado de hoteles debe estar soportada por la API y
+ consumida en la aplicación cliente.
+- A la hora de diseñar la estructura de la aplicación, tener en cuenta factores como
+ escalabilidad, reutilización y separación de responsabilidades.
+- Uso de configuraciones para ajustar como se ejecuta la aplicación en entornos productivos
+ y de desarrollo.
+
 Ejercicio 2: Frontend
-Maquetar una página de resultado de hoteles, ver imágenes en el repo (solo mobile y desktop).
-Consumir la API desarrollada en el ejercicio anterior, implementando las funcionalidades
-necesarias para listar y filtar los hoteles.
-Utilizar alguna librería o framework guiado por componentes ( AngularJS o Angular).
-Utilizar algún package manager (npm, bower) para manejar dependencias externas.
-Utilizar una grilla responsive o similar para el maquetado.
-Optimizar todos los recursos para entornos productivos, (minificar, ofuscar, etc).
-Extras
+
+- Maquetar una página de resultado de hoteles, ver imágenes en el repo (solo mobile y desktop).
+- Consumir la API desarrollada en el ejercicio anterior, implementando las funcionalidades
+  necesarias para listar y filtar los hoteles.
+- Utilizar alguna librería o framework guiado por componentes ( AngularJS o Angular).
+- Utilizar algún package manager (npm, bower) para manejar dependencias externas.
+- Utilizar una grilla responsive o similar para el maquetado.
+- Optimizar todos los recursos para entornos productivos, (minificar, ofuscar, etc).
+
+
+-> Extras
 Los puntos extras solo se tomarán en cuenta si las funcionalidades de los puntos anteriores
 fueron completadas correctamente.Añadir alguna capa de persistencia de datos.
 Implementar el CRUD de hoteles (solo a nivel API).

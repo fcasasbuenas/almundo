@@ -1,0 +1,39 @@
+
+
+body{
+    background-color: rgb(244, 244, 244);    
+}
+
+#header-container{
+    background-color: #0B3A7A;
+}
+
+#filters-container h5{ 
+    color: rgb(70, 70, 70)
+}
+
+.amenities, .stars{
+    height: 25px;
+    width: 25px;
+}
+
+.hotel-card{    
+    background-color: white;
+}
+
+.price{
+    color: rgb(224, 104, 0);
+}
+
+.price-text{
+    color: rgb(70, 70, 70);
+}
+/* texto precio por noche #858585 */
+
+/*test styles
+blue rgb(14, 120, 178)
+yellow rgb(255, 186, 0)
+
+
+gris texto rgb(70, 70, 70)
+*/

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Test para almundo.com</title>
+        <meta charset="UTF-8">        
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+        <link rel="stylesheet" href="assets/styles.css">
+    </head>
+
+    <body ng-app="almundoController" ng-controller="mainController">
+        
+        <nav id="header-container" class="navbar container"> <!-- Encabezado -->   
+            <a class="navbar-brand" href="#">       
+                <img src="assets/images/logo-almundo.svg" alt="Almundo.com" class="navbar-brand my-1 d-inline-block align-top" />
+            </a>    
+        </nav>       
+
+        <section  class="container">
+            <div class="row mt-sm-1 mt-lg-3 ">
+                <div id="filters-container" class="card col-sm-12 col-lg-3" role="tablist" aria-multiselectable="true"> <!-- Busqueda --> 
+                    <form>
+                        <div class="m-2" role="tab" id="filter-header">
+                            <h5 class="font-weight-bold">
+                                <a data-toggle="collapse" data-parent="#filters-container" href="#collapseFilter" aria-expanded="true" aria-controls="collapseFilter">
+                                    Filtros
+                                </a>
+                            </h5>
+                        </div>
+
+                        <div id="collapseFilter" class="collapse hidden-md-down show p-2" role="tabpanel" aria-labelledby="filter-header">  <!-- Filter container --> 
+                            <div class="">
+                                <p class="filter-group-title mt-3"><img class="stars" src="assets/icons/filters/search-b.svg"> Nombre del hotel: </p>
+                                <div for="name" class="d-flex align-items-start justify-content-around">
+                                    <input type="text" class="form-control mr-3" name="name" ng-model="formData.name" placeholder="Ingrese el nombre del hotel">
+                                    <button href="#" ng-click="searchHotel()" class="btn btn-primary w-20" >Aceptar</button>  
+                                </div>
+                                
+                                <p class="filter-group-title mt-3"><img class="stars" src="assets/icons/filters/star-b.svg"> Estrellas: </p>
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" id="" ng-model="formData.stars"> 
+                                    <img class="stars" src="assets/icons/filters/star-b.svg"> Todas las estrellas 
+                                </label><br>
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="stars" id="" ng-value="5" ng-model="formData.stars"> 
+                                    <img class="stars" src="assets/icons/filters/star-y.svg" ng-repeat="i in getStars(5)">
+                                </label><br>
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="stars"id="" ng-value="4" ng-model="formData.stars"> 
+                                    <img class="stars" src="assets/icons/filters/star-y.svg" ng-repeat="i in getStars(4)">
+                                </label><br>
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="stars" id="" ng-value="3" ng-model="formData.stars"> 
+                                    <img class="stars" src="assets/icons/filters/star-y.svg" ng-repeat="i in getStars(3)">
+                                </label><br>
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="stars" id="" ng-model="formData.stars" ng-value="2">  
+                                    <img class="stars" src="assets/icons/filters/star-y.svg" ng-repeat="i in getStars(2)">
+                                </label><br>
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="stars" id="" ng-model="formData.stars" ng-value="1"> 
+                                    <img class="stars" src="assets/icons/filters/star-y.svg" ng-repeat="i in getStars(1)">
+                                </label><br>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+                               
+
+                <div id="hotel-list" class="container col-sm-12 col-lg-9 ">  <!-- List of hotels loaded -->       
+
+                    <div class="hotel-card row d-flex flex-row justify-content-between mb-1 p-2 " ng-repeat="hotel in hotels"> <!-- justify-content-lg-between -->
+                        
+                        <div class="col align-self-start">
+                            <img class="img-fluid" src="assets/images/hotels/{{ hotel.image }}" alt="{{ hotel.name }}" /> 
+                        </div>
+
+                        <div class="col align-self-start"> 
+                            <h5 class=""><a href="#">{{ hotel.name }}</a></h5>  
+                            <p><img class="stars" src="assets/icons/filters/star-y.svg"  alt="star"  ng-repeat="i in getStars(hotel.stars)" > </p>
+                            <img class="amenities" ng-repeat="amenitie in hotel.amenities"src="assets/icons/amenities/{{amenitie}}.svg">    
+                        </div> 
+                        
+                        <div class="col d-flex flex-column align-self-center text-center">
+                            <div class=" justify-content-center">
+                            <p class="price-text">Precio por noche por<br> habitaci&oacute;n:</p>
+                            <p class="price font-weight-bold ">ARS {{ hotel.price }}</p>   
+                            <a class="btn btn-primary" href="#" role="button">Ver hotel</a>
+                            </div>
+                        </div>                       
+
+                    </div>                    
+                </div>   
+            </div>           
+        </section>
+          
+
+          
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>   
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script> 
+        <script src="assets/main.js"></script>
+    </body>
+</html>
