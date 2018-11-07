@@ -2,9 +2,8 @@
 
 ## Introducción
 
-> Solución al test para desarrollador front-end de almundo.com.
 > Este proyecto simula un sitio web de búsqueda de hoteles.
-> Para la instalación del proyecto se requiere tener instalado npm en la maquina destino.
+> Para la instalación del proyecto se requiere tener npm en la maquina destino.
 
 
 ## Installación
@@ -18,7 +17,7 @@
 
         npm start
 
-- luego de esto se procede a migrar la información contenida en el archivo de mocks, hacia una base de datos online mongodb  de mLab, accediendo a la URL
+- luego de esto se procede a migrar la información contenida en el archivo de mocks, hacia una base de datos online mongodb de mLab, accediendo a la URL
 
         http://localhost:3000/api/setup
 
